@@ -1,0 +1,572 @@
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="img/icon.ico" rel="icon">
+
+  <title>HomePage</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="main">
+  <div class = "row" style="background-color: #a5a5a5">
+    <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class = "col-xs-2 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+        <h1 class="glyphicon glyphicon-menu-hamburger gi-3x"></h1>
+      </div>
+      <center>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" >
+
+          <img src="sifu.png" width="25%" class="img-responsive center-block"/>
+      </div>
+    </center>
+
+        <h3 align ="right" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+
+        </h3>
+      </div>
+    </div>
+
+    <center>
+      {{> findCourse}}
+    </center>
+    {{> yield}}
+    <hr />
+    <p>Copyright &copy; Todos, 2014-2015.</p>
+</template>
+
+<template name="home">
+  <div class = "container">
+  <br><br>
+
+  <div class = "jumbotron">
+
+      {{#each imageFile}}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="thumbnail" id="image" >
+          <div class="img">
+            <img class = "imageFile{{selectedClass}} img-responsive center-block" src="{{fileSource}}"  alt="{{fileSource}}" width="200px" height="200px" />
+          </div>
+          <div class="caption">
+            <h3>Rating:{{rating}}</h3>
+            <h4>{{imgName}}</h4>
+            <p>
+              User: <a href="#" id = "user">{{owner}}</a>
+            </p>
+
+            <p style ="overflow : hidden">
+              Description:{{imgDesp}}
+            </p>
+            <p>
+              {{>starsRating mutable = true class = "rating" size=30 id = _id}}
+            </p>
+          </div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+
+</template>
+
+<template name = "login">
+  <form id = "login-form">
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1><strong>SIFU</strong> Login Form</h1>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                      <div class="form-top">
+                        <div class="form-top-left">
+                          <h3>Login to our site</h3>
+                            <p>Enter your username and password to log on:</p>
+                        </div>
+                        <div class="form-top-right">
+                          <i class="fa fa-key"></i>
+                        </div>
+                        </div>
+                        <div class="form-bottom">
+                      <form role="form" action="" method="post" class="login-form">
+                        <div class="form-group">
+                          <label class="sr-only" for="form-username">Username</label>
+                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control-login" id="form-username">
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="form-password">Password</label>
+                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control-login" id="form-password">
+                          </div>
+                          <button type="submit" class="btnLogin">Sign in!</button>
+                      </form>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                      <h3>...or login with:</h3>
+                      <div class="social-login-buttons">
+                        <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                          <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                          <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                          <i class="fa fa-google-plus"></i> Google Plus
+                        </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  </form>
+</template>
+
+<template name = "signup">
+  <form id = "signup-form">
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1><strong>SIFU</strong> Login Form</h1>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                      <div class="form-top">
+                        <div class="form-top-left">
+                          <h3>Login to our site</h3>
+                            <p>Enter your username and password to log on:</p>
+                        </div>
+                        <div class="form-top-right">
+                          <i class="fa fa-key"></i>
+                        </div>
+                        </div>
+                        <div class="form-bottom">
+                      <form role="form" action="" method="post" class="login-form">
+                        <div class="form-group">
+                          <label class="sr-only" for="form-username">Username</label>
+                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control-login" id="form-username">
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="form-password">Password</label>
+                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control-login" id="form-password">
+                          </div>
+                          <button type="submit" class="btnLogin">Sign in!</button>
+                      </form>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                      <h3>...or login with:</h3>
+                      <div class="social-login-buttons">
+                        <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                          <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                          <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                          <i class="fa fa-google-plus"></i> Google Plus
+                        </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  </form>
+</template>
+
+<template name = "logoutForm">
+  <form id = "logout-form">
+    {{currentUser.profile.username}}<button type = "submit" class = "btn btn-default">Log Out</button>
+  </form>
+
+</template>
+
+<template name="profile">
+  <br><br>
+
+  <div class="container">
+    <div class="jumbotron" style="padding-top:2%; padding-bottom:2%">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-sm-12 col-lg-3">
+                <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" width="75%" alt="stack photo" class="img" style = "padding-top:20%">
+                <!--<<img src="rshan.JPG" width="75%" alt="stack photo" class="rotate90" style = "padding-top:60%">-->
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                <div class="container" style="border-bottom:1px solid black; padding-left:0">
+                    <h2>Tan Rou Shan</h2>
+                </div>
+                <br>
+                <ul class="container details" style = "padding-left:0">
+                  <li><h4><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>012-1234567</h4></li>
+                  <li><h4><span class="glyphicon glyphicon-gift one" style="width:50px;"></span>24/02/1995</h4></li>
+                  <li><h4><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Bukit Jalil</h4></li>
+                  <li><h4><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>rshan95trs@gmail.com</h4></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{> talentTab}}<br>
+    {{> classTab}}
+  </div>
+</template>
+
+<template name="findCourse">
+  <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <br>
+    <h4>Find courses here</h4>
+  </div>
+
+
+  <div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3">
+    <input type="text" class="form-control" name = "searchCourse" id="inputSearch" placeholder="">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-lg-12" style="height:40px"></div>
+
+  <ul class ="nav navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 col-lg-offset-5 col-md-offset-5">
+
+      <li class = "navLi"><a href="#">Design</a></li>
+      <li class = "navLi"><a href="#">Music</a></li>
+      <li class = "navLi"><a href="#">Business</a></li>
+      <li class = "navLi"><a href="#">Languages</a></li>
+      <li><a href="/profile">Bakery</a></li>
+  </ul>
+
+</template>
+
+<template name="talentTab">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item"><a class="nav-link active" id="talents-tab" data-toggle="tab" href="#talents" role="tab" aria-controls="talents" aria-selected="true">TALENTS</a></li>
+      <li class="nav-item"><a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="experience" aria-selected="false">WORKING EXPERIENCE</a></li>
+      <li class="nav-item"><a class="nav-link" id="achievements-tab" data-toggle="tab" href="#achievements" role="tab" aria-controls="achievements" aria-selected="false">ACHIEVEMENTS</a></li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade in active" id="talents" role="tabpanel" aria-labelledby="talents-tab">
+        <div class = "container">
+          <p>Eating</p><p>Picture with Cats</p><p>Sleeping with Sound</p>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+        <div class = "container">
+          <p>Cashier</p><p>Sales</p><p>Cafe</p><p>Waiter</p>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
+        <div class = "container">
+          <p>Coffee Art</p><p>Viper Run</p><p>HD1 Student</p>
+        </div>
+      </div>
+    </div>
+
+</template>
+
+<template name="classTab">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item"><a class="nav-link active" id="yourClass-tab" data-toggle="tab" href="#yourClass" role="tab" aria-controls="yourClass" aria-selected="true">YOUR CLASS</a></li>
+      <li class="nav-item"><a class="nav-link" id="enrolled-tab" data-toggle="tab" href="#enrolled" role="tab" aria-controls="enrolled" aria-selected="false">ENROLLED CLASS</a></li>
+      <li class="nav-item"><a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="false">REQUESTS</a></li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade in active" id="yourClass" role="tabpanel" aria-labelledby="yourClass-tab">
+        <div class = "container">
+          {{> class}}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="enrolled" role="tabpanel" aria-labelledby="enrolled-tab">
+        <div class = "container">
+          {{> class}}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
+        <div class = "container">
+          {{> class}}
+        </div>
+      </div>
+    </div>
+
+</template>
+
+<template name="class">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="thumbnail" id="image" >
+            <div class="img">
+              <img class = "img-responsive center-block" src="test.jpg"  alt="" width="200px" height="200px" />
+            </div>
+            <div class="caption">
+              <h3>Kindergarten Drawing Class</h3>
+              <h5>Annabelle </h5>
+              <h6>Art</h6>
+              <h6>RM 20/class</h6>
+
+              <p>
+                <a href="#" class=" btn btn-primary " role="button">More</a>
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {{> newClass}}
+    </div>
+</template>
+
+<template name="newClass">
+
+    <div class="row">
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a data-toggle = "modal" href = "#addClass" class="thumbnail" id="image" width ="" >
+            <div class="img">
+              <img class = "img-responsive center-block" src="add.png"  alt="" width="100px" height="100px" />
+            </div>
+            <div class="caption">
+              <h4 align = "center">Create A New Class</h4>
+            </div>
+          </a>
+        </div>
+    </div>
+
+    <!--Add Patient Modal-->
+    <div class="container">
+          <!-- Trigger the modal with a button -->
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="addClass" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-body">
+              <!--Content-->
+            <div class = "container" style = "width: 100%">
+              <form class="custom-form-horizontal" data-toggle="validator" role="form">
+
+      <!--Add Class-->
+
+      <div class ="panel-group">
+        <div class = "panel panel-default">
+          <div class = "panel-heading text-center"   style="color: #fff; background-color: rgb(51, 122, 183);"><img src="classIcon.png" width ="5%"><strong> Add Class</strong></div>
+          <div class = "panel-body">
+
+            <div class = "row form-group">
+
+              <!--Title-->
+              <label  class="control-label col-sm-1 col-xs-12 col-lg-2 col-md-2">Title:</label>
+              <div class="col-xs-12 col-sm-12 col-lg-9 col-md-9">
+                <input type="text" name = "title" class="form-control" id="inputTitle" placeholder="Title" required>
+              </div>
+            </div>
+
+            <!--Image-->
+            <div class = "row form-group">
+            <label class="control-label col-sm-1 col-xs-12 col-lg-2 col-md-2">Image Source:</label>
+              <div class="col-xs-12 col-sm-12 col-lg-9 col-md-9">
+                <input type="text" name = "imageSource" class="form-control" id="inputImage" placeholder="example.jpg/png/gif" required>
+              </div>
+            </div>
+
+
+            <!--Price & Target Audience-->
+            <div class = "row form-group">
+              <label class="control-label col-sm-1 col-xs-12 col-lg-2 col-md-2">Price per Class:</label>
+              <div class="col-xs-12 col-sm-12 col-lg-2 col-md-2">
+                <input type="text" name = "price" class="form-control" id="inputPrice" placeholder="" required>
+              </div>
+
+              <label class = "control-label col-xs-12 col-sm-12 col-xs-12 col-lg-3 col-md-3" style = "margin-right:-9%;">Target Audience:</label>
+              <div class = "col-xs-12 col-sm-12 col-lg-4 col-md-4">
+
+                <!--Skills-->
+                <select name ="selectSkill" class = "form-control" id = "selSkill" required = "required">
+                    <option value="" class="">- Select at least one -</option>
+                    <option value="Anyone" class="">Anyone</option>
+                    <option value="Students" class="">Students</option>
+                    <option value="Businessman" class="">Businessman</option>
+                    <option value="Musicians" class="">Musicians</option>
+                    <option value="" class=""></option>
+                    <option value="" class=""></option>
+                    <option value="" class=""></option>
+                    <option value="" class=""></option>
+                </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12" style="height:10px"></div>
+
+
+
+
+              <!--First Choice-->
+              <div class = "row form-group">
+                <label class = "control-label col-xs-12 col-sm-3 col-xs-12 col-lg-2 col-md-2">Day & Time:</label>
+
+                <div class="btn-toolbar">
+                    <div class="btn-group col-lg-8 col-xs-12 col-md-8" style = "padding-left: 0; margin-left: 0;">
+                        <div class = "col-xs-12 col-sm-12 col-lg-3 col-md-3">
+
+            <!--First Month-->
+            <select name ="firstMonth" class = "form-control" id = "selFMonth" required = "required">
+                <option value="" class="">- Month -</option>
+                <option value="January" class="">January</option>
+                <option value="February" class="">February</option>
+                <option value="March" class="">March</option>
+                <option value="April" class="">April</option>
+                <option value="May" class="">May</option>
+                <option value="June" class="">June</option>
+                <option value="July" class="">July</option>
+                <option value="August" class="">August</option>
+                <option value="September" class="">September</option>
+                <option value="October" class="">October</option>
+                <option value="November" class="">November</option>
+                <option value="December" class="">December</option>
+            </select>
+            </div>
+
+            <!--First Day-->
+            <div class = "col-lg-3 col-md-3 col-xs-12 col-sm-12">
+              <select name ="firstDay" class = "form-control" id = "selFDay" required = "required">
+                  <option value="" class="">- Day -</option>
+                  <option value="01" class="">1</option>
+                  <option value="02" class="">2</option>
+                  <option value="03" class="">3</option>
+                  <option value="04" class="">4</option>
+                  <option value="05" class="">5</option>
+                  <option value="06" class="">6</option>
+                  <option value="07" class="">7</option>
+                  <option value="08" class="">8</option>
+                  <option value="09" class="">9</option>
+                  <option value="10" class="">10</option>
+                  <option value="11" class="">11</option>
+                  <option value="12" class="">12</option>
+                  <option value="13" class="">13</option>
+                  <option value="14" class="">14</option>
+                  <option value="15" class="">15</option>
+                  <option value="16" class="">16</option>
+                  <option value="17" class="">17</option>
+                  <option value="18" class="">18</option>
+                  <option value="19" class="">19</option>
+                  <option value="20" class="">20</option>
+                  <option value="21" class="">21</option>
+                  <option value="22" class="">22</option>
+                  <option value="23" class="">23</option>
+                  <option value="24" class="">24</option>
+                  <option value="25" class="">25</option>
+                  <option value="26" class="">26</option>
+                  <option value="27" class="">27</option>
+                  <option value="28" class="">28</option>
+                  <option value="29" class="">29</option>
+                  <option value="30" class="">30</option>
+                  <option value="31" class="">31</option>
+              </select>
+            </div>
+
+            <!--First Time-->
+            <div class = "col-lg-6 col-md-6 col-xs-12 col-sm-12">
+              <select name ="firstTime" class = "form-control" id = "selFTime" required = "required">
+                  <option value="" class="">Time am/pm</option>
+                  <option value="7am" class="">7:00am</option>
+                  <option value="8am" class="">8:00am</option>
+                  <option value="9am" class="">9:00am</option>
+                  <option value="10am" class="">10:00am</option>
+                  <option value="11am" class="">11:00am</option>
+                  <option value="12pm" class="">12:00pm</option>
+                  <option value="1pm" class="">1:00pm</option>
+                  <option value="2pm" class="">2:00pm</option>
+                  <option value="3pm" class="">3:00pm</option>
+                  <option value="4pm" class="">4:00pm</option>
+                  <option value="5pm" class="">5:00pm</option>
+                  <option value="6pm" class="">6:00pm</option>
+                  <option value="7pm" class="">7:00pm</option>
+                  <option value="8pm" class="">8:00pm</option>
+                  <option value="9pm" class="">9:00pm</option>
+                  <option value="10pm" class="">10:00pm</option>
+                  <option value="11pm" class="">11:00pm</option>
+              </select>
+            </div>
+            </div>
+            </div>
+          </div>
+        <div class="col-xs-12 col-sm-12 col-lg-12" style="height:10px"></div>
+
+        <!--Skill Category & Location-->
+        <div class = "row form-group">
+          <label class = "control-label col-xs-12 col-sm-3 col-xs-12 col-lg-2 col-md-2">Skill Category:</label>
+
+          <div class="btn-toolbar">
+              <div class="btn-group col-lg-8 col-xs-12 col-md-8" style = "padding-left: 0; margin-left: 0;">
+                  <div class = "col-xs-12 col-sm-12 col-lg-5 col-md-5">
+
+                  <!--Skills-->
+                  <select name ="selectSkill" class = "form-control" id = "selSkill" required = "required">
+                      <option value="" class="">- Select at least one -</option>
+                      <option value="Graphics & Design" class="">Graphics & Design</option>
+                      <option value="Digital Marketing" class="">Digital Marketing</option>
+                      <option value="Writing & Translation" class="">Writing & Translation</option>
+                      <option value="Video Animation" class="">Video Animation</option>
+                      <option value="Music & Audio" class="">Music & Audio</option>
+                      <option value="Programming & Tech" class="">Programming & Tech</option>
+                      <option value="Business" class="">Business</option>
+                      <option value="Fun & Lifestyle" class="">Fun & Lifestyle</option>
+                  </select>
+                  </div>
+                  <label class = "control-label col-xs-12 col-sm-3 col-xs-12 col-lg-2 col-md-2">Location:</label>
+                  <div class="col-xs-12 col-sm-12 col-lg-5 col-md-5">
+                    <input type="text" name = "target" class="form-control" id="inputLocation" placeholder="Enter a location" required>
+                  </div>
+              </div>
+          </div>
+        </div>
+  <div class="col-xs-12 col-sm-12 col-lg-12" style="height:10px"></div>
+
+            <!--Description-->
+            <div class = "row form-group">
+              <label class="control-label col-xs-12 col-sm-3 col-xs-12 col-lg-2 col-md-2">Description:</label>
+              <div class="col-xs-12 col-sm-12 col-lg-9 col-md-10">
+                <textarea name = "message" class = "form-control" id = "inputMessage" rows = "7" placeholder = "" required></textarea>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12" style="height:10px"></div>
+
+            <!--Submit Button-->
+            <center><button type="submit" name = "submit" class="btn btn-warning" style="" contenteditable="false">Submit</button></center>
+          </div>
+      </div>
+    </div>
+    </form>
+  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+
+
+</template>
