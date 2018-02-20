@@ -1,82 +1,3 @@
-/*Login CSS*/
-
-input[type="text"],
-input[type="password"],
-textarea,
-textarea.form-control {
-	height: 50px;
-    margin: 0;
-    padding: 0 20px;
-    vertical-align: middle;
-    background: #f8f8f8;
-    border: 3px solid #ddd;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 50px;
-    color: #888;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-
-textarea,
-textarea.form-control-login {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	line-height: 30px;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-textarea.form-control:focus {
-	outline: 0;
-	background: #fff;
-    border: 3px solid #ccc;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-}
-
-input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder,
-textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
-
-input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder,
-textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
-
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
-
-
-
-button.btnLogin {
-	height: 50px;
-    margin: 0;
-    padding: 0 20px;
-    vertical-align: middle;
-    background: #4aaf51;
-    border: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 50px;
-    color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    text-shadow: none;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-
-button.btnLogin:hover { opacity: 0.6; color: #fff; }
-
-button.btnLogin:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
-
-button.btnLogin:focus { outline: 0; opacity: 0.6; background: #4aaf51; color: #fff; }
-
-button.btnLogin:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #4aaf51; color: #fff; }
-
-
-/*End of Login CSS*/
-
 /* CSS declarations go here */
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
@@ -93,11 +14,16 @@ button.btnLogin:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6
   height: 100%;
 }
 
+.list-unstyled >li {
+  margin-bottom: :0%;
+}
 .thumbnail {
   display: flex;
   flex-direction: column;
 }
-
+.control-label{
+  color: #333;
+}
 ul.nav.navbar-nav {
     float:none;
     display: block;
@@ -106,10 +32,31 @@ ul.nav.navbar-nav {
 .details li {
   list-style: none;
 }
-li {
-    margin-bottom:3%;
+
+.row.form-group{
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.close{
+  text-align: right;
+  margin-right: 0.5%;
+}
+.captionCreate{
+  margin: auto;
+  margin-top: 0%;
+}
+
+.thumbnail{
+  border: 1px solid #ced4da;
 
 }
+
+.caption{
+  margin-left: 3%;
+  color: gray;
+}
+
 .rotate90 {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(90deg);
@@ -117,6 +64,362 @@ li {
     -ms-transform: rotate(90deg);
     transform: rotate(deg);
 }
+
+/*~~~~~CSS for carousel~~~~~*/
+
+#myCarousel img.d-block {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(27, 32, 38, 0.2);
+    opacity: .8;
+    position: absolute;
+    top:0%;
+}
+
+ul#searchbarNav  {
+  background-color: none;
+font-size: .8em;
+}
+
+#searchbarNav a{
+  color: white;
+}
+
+/*~~~~~CSS for FIND COURSE~~~~~*/
+#findcourse {
+  z-index: 2;
+  position: absolute;
+  left: 0%;
+  top: 30%;
+  width: 100vw;
+  text-align: center;
+  color: white;
+}
+
+#findcourse #searchBoxNav ul {
+  white-space:nowrap;
+  margin-top: 10px;
+
+}
+
+#findcourse #searchBoxNav ul li.navLi  {
+  display: inline-block;
+  border-right: 1pt solid white;
+  padding: 5px 10px;
+    color: white;
+}
+
+.gi-3x{font-size: 3em;}
+
+.searchbox #findCourseF h2{
+  font-family: "Franklin Gothic Book","Century Gothic";
+}
+.searchbox .navbar-nav li a{
+  font-family: "Franklin Gothic Book","Century Gothic";
+  font-weight: bolder;
+  font-size: 15px;
+  color: #2b2b2b;
+}
+
+.searchbox .navbar-nav li {
+  border-right: 1px solid #2b2b2b;
+}
+
+.searchbox .navbar-nav {
+  border-spacing: 10px;
+}
+
+.searchbox .navbar-nav li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*~~~~~CSS for NAVIGATION BAR~~~~~*/
+.navbar-nav .nav-link {
+  color: rgb(60,60,60 );
+  font-size: 1.5vw;
+}
+
+#mainNav{
+  background: linear-gradient(rgba(255,255,255,.9), rgba(204, 204, 204 ,0));
+}
+
+#navbarResponsive{
+  background-color: transparent;
+}
+
+.img-fluid{
+  width: 20%;
+}
+.navbar-brand{
+  width:40%;
+}
+.navbar-toggler i{
+  color:black;
+  border: 2px solid black;
+  padding: 10px 15px;
+  border-radius: 5pt;
+
+}
+
+#topnavbar .btn{
+  background-color: transparent;
+  border-color: #000000;
+}
+
+#topnav2logo{
+  max-width:20%;
+}
+
+#topnav2logo .img-fluid{
+  width: 70%;
+}
+
+
+ /*~~~~~CSS FOR LOGINBUTTON~~~~~*/
+#login-dropdown-list {
+  color: black;
+  background-color: rgba(255, 255, 255 ,0.9);
+  padding: 10pt;
+  border-radius: 2pt;
+  position: absolute;
+  width: 20%;
+  font-size: 1.5vw;
+  text-transform: capitalize;
+}
+
+#login-dropdown-list .login-close-text {
+  font-size: 1.3vw;
+  position: relative;
+  left:80%;
+  border-bottom: 1pt solid black;
+}
+
+#login-buttons-password{
+  margin-top: 10pt;
+  border-radius: 2pt;
+  background-color: rgb(75, 133, 201) ;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  padding: 2pt;
+}
+
+.additional-link-container{
+  margin-top: 10px;
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.additional-link-container #signup-link{
+  border-radius: 2pt;
+  background-color: rgb(134, 186, 246  ) ;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  padding: 2pt;
+  display: inline-block;
+  width: 100%;
+}
+
+#login-buttons-forgot-password, #back-to-login-link,
+#login-buttons-open-change-password,
+#login-buttons-do-change-password{
+  border-radius: 2pt;
+  background-color: rgb(134, 186, 246  ) ;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  padding: 2pt;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10pt;
+}
+
+#login-buttons-logout{
+  border-radius: 2pt;
+  background-color: rgb(251, 48, 48  ) ;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  padding: 2pt;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10pt;
+}
+
+
+#forgot-password-link{
+  font-size: 1vw;
+  text-transform: capitalize;
+  color: rgb(75, 133, 201);
+  position: relative;
+  right:0;
+  display: inline-block;
+  width: 100%;
+
+}
+
+#login-dropdown-list input {
+  display: block;
+  width:100%;
+
+}
+
+/*~~~~~CSS FOR searchbar~~~~~*/
+#search_icon {
+  font-size: 2em;
+}
+
+#search_size input{
+  font-size: 1.2em;
+  padding: 1px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+ #inputGroupbtn{
+   margin-top: 5px;
+ }
+
+ /*~~~~~CSS FOR background~~~~~*/
+.bgcolor {
+  background-image:url(wp1_1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+button#editpersonalinfo:hover{
+  border: 1pt solid grey;
+  background-color: transparent;
+}
+
+#defaultimg {
+  padding-left: 40px;
+}
+
+#profile_icon {
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+#profile_icon {
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 800px){
+  .img-fluid{
+    width:40%;
+    margin-left: 20pt;
+  }
+  .navbar-dark .navbar-brand{
+    max-width: 60%;
+  }
+    #login-dropdown-list {
+    width: 80%;
+    position: absolute;
+
+    padding: 20px;
+    left:10%;
+  }
+  .additional-link-container #signup-link,
+  {
+    font-size: 10pt;
+  }
+  #forgot-password-link{
+    font-size: 3vw;
+  }
+  #login-dropdown-list .login-close-text{
+    font-size: 4vw;
+  }
+
+  .navbar-nav .nav-link{
+    font-size: 3.5vw;
+    float:right;
+  }
+
+  #navbarResponsive{
+    background-color: rgba(247, 247, 247,0.9);
+    width:50%;
+    border-radius: 3pt;
+    padding: 5pt 10pt;
+  }
+
+  .navbar-toggler i{
+    font-size: 4vw;
+  }
+
+}
+
+@media only screen and (max-width: 1025px){
+  .img-fluid{
+    width:40%;
+    margin-left: 20pt;
+  }
+  #login-dropdown-list {
+  width: 80%;
+  position: absolute;
+  font-size: 3vw;
+  padding: 3vw;
+  left:10%;
+  text-transform: capitalize;
+}
+  .additional-link-container #signup-link,
+  {
+    font-size: 30pt;
+    padding-left: 30px;
+    width: 100%;
+  }
+  #forgot-password-link{
+    font-size: 3vw;
+  }
+  #login-dropdown-list .login-close-text{
+    font-size: 3vw;
+  }
+
+  .navbar-nav .nav-link{
+    font-size: 3.5vw;
+    float:right;
+  }
+
+  .navbar-toggler i{
+    font-size: 5vw;
+  }
+
+}
+
+
+.searchbox {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  z-index: 3;
+  color: black;
+  text-align: center;
+    -webkit-transform: translate3d(-50%,-50%,0);
+       -moz-transform: translate3d(-50%,-50%,0);
+        -ms-transform: translate3d(-50%,-50%,0);
+         -o-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
+
+}
+
+
+/*Homepage nav-tab*/
+
+
 .nav-tabs{
   background-color:#0a6cc5;
   color: white;
@@ -126,7 +429,8 @@ li {
 }
 
 .tab-content{
-    background-color:#d3d3d3;
+    background-color:white;
+    color:#fff;
     padding:5px
 }
 .nav-tabs > li > a{
@@ -134,6 +438,32 @@ li {
 }
 .nav-tabs > li > a:hover{
 
-    background-color: #d3d3d3;
+    background-color: white;
     color:#0a6cc5;
+}
+
+.haha {
+  padding-left: 5%;
+  font-size: 20px;
+}
+
+#talents, #experience, #achievements li{
+  list-style-type: none;
+  margin:0;
+  padding-bottom: 5px;
+  color: black;
+  font-size: 20px;
+}
+
+#upForm label.error{
+  color: red;
+}
+
+#upForm input#contactNo {
+  width:100%;
+}
+
+/*HEADER jumbotron*/
+.navtest {
+
 }
